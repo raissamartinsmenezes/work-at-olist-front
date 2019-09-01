@@ -52,25 +52,25 @@ Operational System:
 * RAM: 8.00 GB
 * System Type: 64 bits
 
-## Dependencies // <<<<<<<<< maybe >>>>>>>>>
+## Dependencies <<<<<<<<< continue >>>>>>>>>
 
-## Directories Structure
+## Directories Structure <<<<<<<<< continue >>>>>>>>>
 
 # Getting Started
 
-`### Project Requirements`
+`Project Requirements`
 
 To run this project you will need [Node.js](https://nodejs.org/en/) installed in your computer, if not you can use the link to redirect to the installer, after that, the environment it will ready for start. 
 
-`### Installing` 
+`Installing` 
 
 Download the project or clone it to your PC, in your terminal enter the **`./olist-test`** directory and run **`npm install`** to install all the project dependencies.
 
-`### Running Project`
+`Running Project`
 
 To run the project in the development mode, in your terminal enter the **`./olist-test`** directory and run **`npm run start`** to open http://localhost:3000 and view it in the browser.
 
-`### Testing Project`
+`Testing Project`
 
 To run tests in your browser, in your terminal enter <<<<<<<<< continue >>>>>>>>> 
 
@@ -80,6 +80,8 @@ This project was deployed in the host service **Netlify**, you can check the res
 
 ## Author
 
-[Raissa Martins](https://www.linkedin.com/in/raissamartinsmenezes/) - Front-end Developer | Designer | Teacher and Tutor at @reprograma
+[Raissa Martins](https://www.linkedin.com/in/raissamartinsmenezes/) - Front-end Developer | Teacher and Tutor at @reprograma | Designer
 
 ## Considerations
+
+* 
