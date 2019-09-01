@@ -1,105 +1,85 @@
-# Work at Olist Frontend
+# Olist Test - Documentation
 
-[Olist](https://olist.com/) is a company that offers an integration platform
-for sellers and marketplaces allowing them to sell their products across
-multiple channels.
+This project is a resolution of the Olist test, one of the steps of the application process to work as a front end developer. It aims to implement a new **account page**, composed of **name**, **email** and **password** inputs with a **strong measure indicator** to a **password confirmation**. All the features below are required.
 
-The Olist [development team](https://engineering.olist.com/) consists of
-developers who love what they do. Our agile development processes and our
-search for the best development practices provide a great environment for
-professionals who like to create quality software in good company.
+## Features Requeried
 
-We are always looking for good programmers who love to improve their work. We
-give preference to small teams with qualified professionals over large teams
-with average professionals.
+Features | Done ✔️
+-------- | ------
+The submit button must be disabled until the form is valid | ✔️
+The Name is required and Email must be a valid email | 🚫
+The invalid input fields should have a border color like the style guide | 🚫
+The valid input fields should have a border color like the style guide | 🚫
+The Password input must make use of the sequence of validation presented in the Style Guide | 🚫
+If the form is valid, the submit button should be clickable | 🚫
+When the form is submitted, it should present a loading status | 🚫
 
-This repository contains a problem used to evaluate the candidate skills.
-It's important to notice that solving the problem is just a
-part of what will be evaluated. We also consider other programming disciplines
-like documentation, testing, commit timeline, design and coding best
-practices.
+## Build With
 
-Hints:
+For build this project the following technologies were used: 
 
-* Carefully read the specification to understand all the problem and
-  artifact requirements before starting.
-* Check the recommendations and reference material at the end of this
-  specification.
+Languages:
+* HTML: to create the structure
+* CSS: to stylize the page
+* JavaScript: to create the logic rules
 
+Libs:  
+* Sass: to compile the CSS language, avoid the repetition and implement the use of a style pattern
+* Jasmine: to create the tests
 
-## How to participate
+Code Versoning:
+* Git & Github
 
-* Make a fork of this repository on Github. If you aren't comfortable with
-   creating a public fork of this project, make a private repository
-   (gitlab offers free private repos) and add developer permission for the
-   user [@tech-hiring](https://gitlab.com/tech-hiring) on project;
-* Follow the instructions on README.md (this file);
-* Deploy your project on a host service (we recommend
-   [Heroku](https://heroku.com) or [Netlify](http://netlify.com/));
-* Apply for the position at our [career page](https://www.99jobs.com/olist)
-   with:
-   * Link to the fork on Github (or gitlab.com);
-   * Link to the project in the deployed host service.
+Server: 
+* 
 
+Task Runner:
+* 
 
-## Specification
+Bundler:
+* 
 
-Today, security is everything, but users still have the bad habit of creating
-accounts with weak passwords, and it is essential that we can offer the user
-ways to keep them safe. So, we must do our best to ensure the safety of our
-users.
+Package Manager:
+* npm
 
-For this, you should implement a **new account** page, composed of Name, Email
-and Password with a strength measure indicator and Password confirmation. All
-these fields are required.
+Code Editor | IDE:
+* VsCode
 
+Operational System: 
+* Samsung 
+* Windows 8.1
+* Processor: Intel® Core™ i7-4510U CPU | 2.00GHz 2.60GHz
+* RAM: 8.00 GB
+* System Type: 64 bits
 
-## Style Guide
+## Dependencies // <<<<<<<<< maybe >>>>>>>>>
 
-The design of the page can be found in the link below:
+## Directories Structure
 
-[Front-End Test Style Guide](https://www.figma.com/file/rsSlx8jDHls6nWXziElWTk/olist----front-end-test)
+# Getting Started
 
-* It's very important that you build this page exactly as proposed, pixel by
-pixel.
+`### Project Requirements`
 
+To run this project you will need [Node.js](https://nodejs.org/en/) installed in your computer, if not you can use the link to redirect to the installer, after that, the environment it will ready for start. 
 
-## Instructions
+`### Installing` 
 
-* The submit button must be disabled until the form is valid.
-* The Name is required and Email must be a valid email.
-* The invalid input fields should have a border color like the style guide.
-* The valid input fields should have a border color like the style guide.
-* The Password input must make use of the sequence of validation presented in
-  the Style Guide
-* If the form is valid, the submit button should be clickable
-* When the form is submitted, it should present a loading status.
+Download the project or clone it to your PC, in your terminal enter the **`./olist-test`** directory and run **`npm install`** to install all the project dependencies.
 
+`### Running Project`
 
-## Project Requirements:
+To run the project in the development mode, in your terminal enter the **`./olist-test`** directory and run **`npm run start`** to open http://localhost:3000 and view it in the browser.
 
-* Application must be written in HTML, JavaScript and CSS. You can only make
-  use of a CSS preprocessor.
-* You **may not** use any Javascript library or framework such as React, with the exception of
-  polyfills and testing libraries.
-* You **may** use modern JavaScript development tools such as task runners, compilers and bundlers (ex.: webpack, Babel, ESLint).
-* Your page must support all modern browsers and IE 11+.
-* Write the project documentation containing: [Sample](https://github.com/elsewhencode/project-guidelines/blob/master/README.sample.md)
-  * Installing and testing instructions;
-  * Brief description of the work environment used to run this
-    project (Computer/operating system, text editor/IDE, libraries, etc).
-* Every text or code must be in English.
+`### Testing Project`
 
+To run tests in your browser, in your terminal enter <<<<<<<<< continue >>>>>>>>> 
 
-## Recommendations
+## Deploy
 
-* Write tests!
-* Use [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)), [KISS](https://en.wikipedia.org/wiki/KISS_principle), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-* Use programming good practices;
-* Use [git best practices](https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/best-practices),
-  with clear messages (written in English);
-* If you build this with Web Components it will be a plus.
-* Feel free to use any language to serve the page if you need. Using Python,
-  Go or Elixir is a plus.
+This project was deployed in the host service **Netlify**, you can check the result by clicking [here]().
 
-**Have fun!**
+## Author
+
+[Raissa Martins](https://www.linkedin.com/in/raissamartinsmenezes/) - Front-end Developer | Designer | Teacher and Tutor at @reprograma
+
+## Considerations
