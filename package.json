@@ -1,0 +1,19 @@
+{
+  "name": "work-at-olist-front",
+  "version": "1.0.0",
+  "description": "olist test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raissamartinsmenezes/work-at-olist-front.git"
+  },
+  "author": "raissa martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raissamartinsmenezes/work-at-olist-front/issues"
+  },
+  "homepage": "https://github.com/raissamartinsmenezes/work-at-olist-front#readme"
+}
