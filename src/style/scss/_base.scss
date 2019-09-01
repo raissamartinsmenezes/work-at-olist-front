@@ -1,0 +1,13 @@
+// page reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $background-color;
+    width: 1440px;
+    height: 912px;
+}
+

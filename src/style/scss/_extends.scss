@@ -1,0 +1,42 @@
+%input {
+    width: 375px;
+    height: 44px;
+    background-color: $default-white;
+    border: 1px solid $border-input-color;
+    box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+%font-primary {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 26px;
+    color: $font-primary-color;
+}
+
+%font-secundary {
+    font-family: $font-primary;
+    font-size: 22px;
+    color: $font-secundary-color;
+    text-align: center;
+}
+
+%indicator-password {
+    width: 119.67px;
+    height: 8px;
+    background-color: $default-grey;
+    border-radius: 10px;
+}
+
+%indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: $default-grey;
+}
+
+%button {
+    width: 376px;
+    height: 52px;
+    background-color: $button-color;
+    border: none;
+}

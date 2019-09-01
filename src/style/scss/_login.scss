@@ -1,0 +1,135 @@
+.login-box {
+    width: 515px;
+    // height: 740px;
+    height: auto;
+    margin: 80px auto 92px auto;
+    border: 3px solid $border-login-color;
+    background-color: $default-white;
+
+    img {
+        width: 87.83px;
+        height: 35px;
+        margin: 60px 214.17px 24px 213px; 
+    }
+    
+    .login-form {
+        margin: 0 70px;
+        // display: none;
+
+        h1 {
+            @extend %font-secundary;
+            margin-bottom: 37px;
+            line-height: 31px;  
+        }
+
+        label {
+            @extend %font-primary;
+        }
+
+        input {
+            @extend %input;
+            @extend %font-primary;
+            text-indent: 16px;
+            color: $font-secundary-color;
+        }
+
+        .border-red {
+            border: 1px solid $red-color;
+        }
+        
+        .border-green {
+            border: 1px solid $green-color;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        .margin-bottom {
+            margin-bottom: 24px;
+        }
+
+        .indicators-password-box {
+            width: 375px;
+            margin: 8px auto 16px auto;
+            @include display-flex(space-between);   
+        }
+
+        .indicator-password {
+            @extend %indicator-password;
+        }
+
+        .indicators-dot-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .indicator-dot {
+            margin-right: 8px;
+            @extend %indicator-dot;
+        }
+
+        .dot-red {
+            background-color: $red-color;
+        }
+
+        .dot-green {
+            background-color: $green-color;
+        }
+
+        .dot-yellow {
+            background-color: $yellow-color;
+        }
+
+        p {
+            @extend %font-primary; 
+        }
+
+        button {
+            margin: 32px auto 48px auto;
+            @extend %button;
+
+            span {
+                // display: none;
+                @extend %font-primary;
+                color: $default-white;
+            }  
+        }
+    }
+
+    .login-done {
+        display: none;
+
+        .tick-icon {
+            width: 84px;
+            height: 84px;
+            margin: 92px auto 0 auto;
+            border: 3px solid $button-color;
+            border-radius: 50%;
+            position: relative;
+
+            svg {
+                position: absolute;
+                // left: 20.82px;
+                right: 24px;
+                top: 26px;
+            }
+        }
+
+        h2 {
+            @extend %font-secundary; 
+            margin: 16px auto 21px auto;
+            line-height: 32px;
+        }
+
+        p {
+            @extend %font-primary;
+            width: 249px;
+            margin: 0 auto 109px auto;
+            line-height: 27px;
+            text-align: center;
+            color: $font-secundary-color;
+        }
+    }
+}
+
+
+

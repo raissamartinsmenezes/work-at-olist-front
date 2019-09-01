@@ -1,0 +1,36 @@
+// colors
+$background-color: #E5E5E5;
+$default-white: #FFFFFF;
+$default-grey: #EAEAF4;
+$green-color: #1FE6A8;
+$yellow-color: #F7BC1C;
+$red-color: #F79682;
+$button-color: #17D499;
+$logo-color: #0C29D0;
+$border-login-color: #F2F2F2; 
+$border-input-color: #B6B9D0;
+$font-primary-color: #696D8C;
+$font-secundary-color: #312F4F;
+
+// fonts
+/****** SF Text ******/
+@font-face {
+    font-family: "SF Text";
+    font-weight: 400;
+    src: url("https://sf.abarba.me/SF-UI-Text-Regular.otf");
+}
+
+/****** Soleil ******/
+// @font-face {
+//     font-family: "Soleil";
+//     font-weight: 400;
+//     src: url("../fonts/Soleil-Regular.otf") format("truetype");
+// }
+
+$font-primary: "SF Text";
+// $font-secundary: "Soleil";
+
+
+
+
+
