@@ -18,11 +18,11 @@
         <form class="login-form">
             <h1>Crie sua conta</h1>
             <label for="name">Nome Completo</label>
-            <input class="border-red" type="text" name="name" autofocus>
+            <input class="border-red" type="text" name="name" autofocus id="name">
             <label for="email">E-mail</label>
-            <input type="email" name="email">
+            <input type="email" name="email" id="email">
             <label for="password">Senha</label>
-            <input type="password" name="password">
+            <input type="password" name="password" id="password">
             <div class="indicators-password-box">
                 <div class="indicator-password dot-red" id="indicator1"></div>
                 <div class="indicator-password" id="indicator2"></div>
@@ -41,9 +41,10 @@
                 <p>Pelo menos 1 número</p>
             </div>
             <label for="confirm-password">Confirme sua senha</label>
-            <input type="password" name="confirm-password">
-            <button>
-                <span>Criar conta</span>
+            <input type="password" name="confirm-password" id="confirmPassword">
+            <button type="submit" id="submitButton" disabled>
+                <!-- criar classe para desabilitar quando o botão for submetido -->
+                <span>Criar conta</span> 
                 <div class="spinner">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
@@ -57,7 +58,7 @@
                 <svg width="36" height="27" viewBox="0 0 36 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M12.0001 21.3399L3.66007 12.9999L0.820069 15.8199L12.0001 26.9999L36.0001 2.99993L33.1801 0.179932L12.0001 21.3399Z"
-                        fill="#17D499" />
+                        fill="#17D499"/>
                 </svg>
             </div>
             <h2>Tudo certo</h2>
