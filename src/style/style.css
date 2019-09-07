@@ -95,13 +95,13 @@
 .login-box .login-form .indicator-dot {
   margin-right: 8px;
 }
-.login-box .login-form .dot-red {
+.login-box .login-form .color-red {
   background-color: #F79682;
 }
-.login-box .login-form .dot-green {
+.login-box .login-form .color-green {
   background-color: #1FE6A8;
 }
-.login-box .login-form .dot-yellow {
+.login-box .login-form .color-yellow {
   background-color: #F7BC1C;
 }
 .login-box .login-form button {
