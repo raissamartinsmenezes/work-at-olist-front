@@ -96,7 +96,7 @@
     }
 
     .login-done {
-        display: none;
+        // display: none;
 
         .tick-icon {
             width: 84px;
@@ -129,6 +129,10 @@
             color: $font-secundary-color;
         }
     }
+}
+
+.disable {
+    display: none;
 }
 
 

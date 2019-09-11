@@ -110,9 +110,6 @@
 .login-box .login-form button span {
   color: #FFFFFF;
 }
-.login-box .login-done {
-  display: none;
-}
 .login-box .login-done .tick-icon {
   width: 84px;
   height: 84px;
@@ -138,6 +135,10 @@
   color: #312F4F;
 }
 
+.disable {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -154,7 +155,6 @@ html {
   margin: 0 auto;
   width: 70px;
   text-align: center;
-  display: none;
 }
 
 .spinner > div {

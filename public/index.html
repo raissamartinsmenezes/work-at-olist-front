@@ -15,7 +15,7 @@
 
         <img src="../src/style/images/logo-olist.png">
         
-        <form class="login-form">
+        <form id='loginFormBox' class="login-form">
             <h1>Crie sua conta</h1>
             <label for="name">Nome Completo</label>
             <input type="text" name="name" autofocus id="name">
@@ -43,9 +43,8 @@
             <label for="confirm-password">Confirme sua senha</label>
             <input type="password" name="confirm-password" id="confirmPassword">
             <button type="submit" id="submitButton" disabled>
-                <!-- criar classe para desabilitar quando o botão for submetido -->
-                <span>Criar conta</span> 
-                <div class="spinner">
+                <span id='createAccountContent'>Criar conta</span> 
+                <div id='loadingStatus' class="spinner disable">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
                     <div class="bounce3"></div>
@@ -53,7 +52,7 @@
             </button>
         </form>
 
-        <div class="login-done">
+        <div id='loginDoneBox' class="login-done disable">
             <div class="tick-icon">
                 <svg width="36" height="27" viewBox="0 0 36 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

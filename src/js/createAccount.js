@@ -195,6 +195,19 @@ function hasValidForm() {
         enableButton()
     } 
 }
+
+function loadingSpinners() {
+    setTimeout(() => {
+        let loadingStatus = document.getElementById('loadingStatus')
+        let createAccountContent = document.getElementById('createAccountContent')
+        // let loginDoneBox = document.getElementById('loginDoneBox')
+        // let loginFormBox = document.getElementById('loginFormBox')
+        createAccountContent.classList.add('disable')
+        loadingStatus.classList.remove('disable')
+        // loginFormBox.classList.add('disable')
+        // loginDoneBox.classList.remove('disable')
+    }, 6000);
+}
 // function hasValidForm(nameValue){
 //     if(nameValue == true){
 //         submitButton.disabled == false
@@ -267,14 +280,20 @@ confirmPasswordInput.addEventListener('keyup', () => {
     hasValidForm() 
 })
 
-// submitButton.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     if(hasValidForm()) {
-//         // ativa o botao 
-//         // troca a classe para os spinners 
-//         // muda a página para 'tudo certo'
-//     }
-// })
+
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    hasValidForm() 
+    loadingSpinners() 
+    let loginDoneBox = document.getElementById('loginDoneBox')
+    let loginFormBox = document.getElementById('loginFormBox')
+    loginFormBox.classList.add('disable')
+    loginDoneBox.classList.remove('disable')
+    // console.log('aqui')
+})
+
+
 
 // deixar o botão opaco 
 // limpar o form > criar função
