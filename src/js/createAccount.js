@@ -180,13 +180,26 @@ function hasValidConfirmPassword(inputValue, passwordValue, inputElement){
         paintBorderRed(inputElement)
         return confirmPasswordValue.isItValid = false
     }
+    
 }
 
-function hasValidForm(nameValue){
-    if(nameValue == true){
-        submitButton.disabled == false
-    }
+function enableButton() {
+    submitButton.disabled = false
 }
+
+function hasValidForm() {
+    if(nameValue.isItValid == true 
+        && emailValue.isItValid == true 
+        && passwordValue.isItValid == true 
+        && confirmPasswordValue.isItValid == true){
+        enableButton()
+    } 
+}
+// function hasValidForm(nameValue){
+//     if(nameValue == true){
+//         submitButton.disabled == false
+//     }
+// }
 
 // function hasValidForm() {
 //     if(nameValue === true && emailValue === true && passwordValue === true && confirmPasswordValue === true){
@@ -201,10 +214,11 @@ nameInput.addEventListener('keyup', () => {
     nameValue.currentValue = nameInput.value.trim() // removing whitespaces from both sides of the 'string' value
     // console.log(nameValue.currentValue)
     hasValidName(nameValue.currentValue, nameInput) // name input validation
-    // hasValidForm(nameValue) // form validation for name
+    hasValidForm() // form validation for name
 }); nameInput.addEventListener('focusout', () => { 
     nameValue.currentValue = nameInput.value.trim()
     hasValidName(nameValue.currentValue, nameInput)
+    hasValidForm() 
     // hasValidForm(nameValue) // form validation for name
     // console.log(nameValue.isItValid)
 })
@@ -214,9 +228,11 @@ emailInput.addEventListener('keyup', () => {
     emailValue.currentValue = emailInput.value.toLowerCase().trim(); 
     hasValidEmail(emailValue.currentValue, emailInput)
     console.log(emailValue.currentValue)
+    hasValidForm() 
 }); emailInput.addEventListener('focusout', () => {
     emailValue.currentValue = emailInput.value.toLowerCase().trim(); 
     hasValidEmail(emailValue.currentValue, emailInput)
+    hasValidForm() 
     // validate form here
     console.log(emailValue.isItValid)
 })
@@ -231,23 +247,25 @@ passwordInput.addEventListener('keyup', () => {
     let testRegexCapital = regexPasswordCapitalLetter.test(passwordValue.currentValue)
     let testRegexNumber = regexPasswordNumber.test(passwordValue.currentValue)
     paintIndicators(testRegexCapital, testRegexNumber, (passwordValue.currentValue.length > 5))
+    hasValidForm() 
 }); passwordInput.addEventListener('focusout', () => {
     passwordValue.currentValue = passwordInput.value
     hasValidPassword(passwordValue.currentValue, passwordInput)
+    hasValidForm() 
 })
 
 confirmPasswordInput.addEventListener('keyup', () => {
     confirmPasswordValue.currentValue = confirmPasswordInput.value
     passwordValue.currentValue = passwordInput.value
     hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue, confirmPasswordInput)
+    hasValidForm() 
     console.log(confirmPasswordValue.isItValid)
 }); confirmPasswordInput.addEventListener('focusout', () => {
     confirmPasswordValue.currentValue = confirmPasswordInput.value
     passwordValue.currentValue = passwordInput.value
     hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue, confirmPasswordInput)
+    hasValidForm() 
 })
-
-// limpar o form 
 
 // submitButton.addEventListener('click', (e) => {
 //     e.preventDefault();
@@ -259,5 +277,6 @@ confirmPasswordInput.addEventListener('keyup', () => {
 // })
 
 // deixar o botão opaco 
+// limpar o form > criar função
 
 
