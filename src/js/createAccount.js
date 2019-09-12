@@ -196,18 +196,19 @@ function hasValidForm() {
     } 
 }
 
-function loadingSpinners() {
-    setTimeout(() => {
-        let loadingStatus = document.getElementById('loadingStatus')
-        let createAccountContent = document.getElementById('createAccountContent')
-        // let loginDoneBox = document.getElementById('loginDoneBox')
-        // let loginFormBox = document.getElementById('loginFormBox')
-        createAccountContent.classList.add('disable')
-        loadingStatus.classList.remove('disable')
-        // loginFormBox.classList.add('disable')
-        // loginDoneBox.classList.remove('disable')
-    }, 6000);
-}
+// function loadingSpinners() {
+//     setTimeout(() => {
+//         let loadingStatus = document.getElementById('loadingStatus')
+//         let createAccountContent = document.getElementById('createAccountContent')
+//         // let loginDoneBox = document.getElementById('loginDoneBox')
+//         // let loginFormBox = document.getElementById('loginFormBox')
+//         createAccountContent.classList.add('disable')
+//         loadingStatus.classList.remove('disable')
+//         // loginFormBox.classList.add('disable')
+//         // loginDoneBox.classList.remove('disable')
+//     }, 6000);
+// }
+
 // function hasValidForm(nameValue){
 //     if(nameValue == true){
 //         submitButton.disabled == false
@@ -285,11 +286,25 @@ confirmPasswordInput.addEventListener('keyup', () => {
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
     hasValidForm() 
-    loadingSpinners() 
-    let loginDoneBox = document.getElementById('loginDoneBox')
-    let loginFormBox = document.getElementById('loginFormBox')
-    loginFormBox.classList.add('disable')
-    loginDoneBox.classList.remove('disable')
+    let loadingStatus = document.getElementById('loadingStatus')
+    let createAccountContent = document.getElementById('createAccountContent')
+    createAccountContent.classList.add('disable')
+    loadingStatus.classList.remove('disable')
+    // loadingSpinners()
+    setTimeout(() => {
+        // let loadingStatus = document.getElementById('loadingStatus')
+        // let createAccountContent = document.getElementById('createAccountContent')
+        let loginDoneBox = document.getElementById('loginDoneBox')
+        let loginFormBox = document.getElementById('loginFormBox')
+        // createAccountContent.classList.add('disable')
+        // loadingStatus.classList.remove('disable')
+        loginFormBox.classList.add('disable')
+        loginDoneBox.classList.remove('disable')
+    }, 2000);
+    // let loginDoneBox = document.getElementById('loginDoneBox')
+    // let loginFormBox = document.getElementById('loginFormBox')
+    // loginFormBox.classList.add('disable')
+    // loginDoneBox.classList.remove('disable')
     // console.log('aqui')
 })
 
