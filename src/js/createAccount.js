@@ -1,56 +1,27 @@
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirmPassword');
-const submitButton = document.getElementById('submitButton');
+const nameInput = document.getElementById('name')
+const emailInput = document.getElementById('email')
+const passwordInput = document.getElementById('password')
+const confirmPasswordInput = document.getElementById('confirmPassword')
+const submitButton = document.getElementById('submitButton')
 
 const validation = () => ({
     isItValid: false,
     currentValue: '',
-});
+})
 
-nameValue = validation();
-emailValue = validation();
-passwordValue = validation();
-confirmPasswordValue = validation();
-
-// function addClass(classInput, selector){
-//     // let inputElement = document.getElementById(selector);
-//     const elemento = document.getElementById(selector);
-//     elemento.classList.add(classInput)
-//     // inputElement.classList.add(classInput);
-// }
-
-// // function removeClass(inputElement, classInput, selector){
-// function removeClass(classInput, selector){
-//     // let inputElement = document.getElementById(selector);
-//     // document.getElementById(selector).classList.remove(classInput)
-//     // inputElement.classList.remove(classInput);
-//     const elemento = document.getElementById(selector);
-//     elemento.classList.remove(classInput)
-// }
-
-// function paintBorder(inputValue, inputElement){
-//     if(inputValue){
-//         console.log(inputElement)
-//         inputElement.classList.add('border-green');
-//         inputElement.classList.remove('border-red');
-   
-//     } else {
-//         inputElement.classList.remove('border-green');
-//         inputElement.classList.add('border-red');
-//     }
-//     return inputElement;    // função de pintar borda adicionando ou removendo a classe
-// }
+nameValue = validation()
+emailValue = validation()
+passwordValue = validation()
+confirmPasswordValue = validation()
 
 function paintBorderGreen(inputElement){
-    inputElement.classList.add('border-green');
-    inputElement.classList.remove('border-red');
+    inputElement.classList.add('border-green')
+    inputElement.classList.remove('border-red')
 }
 
 function paintBorderRed(inputElement){
-    inputElement.classList.remove('border-green');
-    inputElement.classList.add('border-red');
+    inputElement.classList.remove('border-green')
+    inputElement.classList.add('border-red')
 }
 
 // function to test regex for name and email
@@ -65,32 +36,32 @@ function testRegex(regex, inputValue, inputElement){
 }
 
 function paintIndicators(testRegexCapital, testRegexNumber, inputValueLength){
-    let indicator1 = document.getElementById('indicator1');
-    let indicator2 = document.getElementById('indicator2');
-    let indicator3 = document.getElementById('indicator3');
-    let dot1 = document.getElementById('dot1');
-    let dot2 = document.getElementById('dot2');
-    let dot3 = document.getElementById('dot3');
+    let indicator1 = document.getElementById('indicator1')
+    let indicator2 = document.getElementById('indicator2')
+    let indicator3 = document.getElementById('indicator3')
+    let dot1 = document.getElementById('dot1')
+    let dot2 = document.getElementById('dot2')
+    let dot3 = document.getElementById('dot3')
 
     if(testRegexCapital == true){
-        dot2.classList.add('color-green');
+        dot2.classList.add('color-green')
     } else {
-        dot2.classList.remove('color-green');
-        dot2.classList.add('color-red');
+        dot2.classList.remove('color-green')
+        dot2.classList.add('color-red')
     }
     
     if(testRegexNumber == true){
-        dot3.classList.add('color-green');
+        dot3.classList.add('color-green')
     } else {
-        dot3.classList.remove('color-green');
-        dot3.classList.add('color-red');
+        dot3.classList.remove('color-green')
+        dot3.classList.add('color-red')
     }
     
     if(inputValueLength == true){
-        dot1.classList.add('color-green');
+        dot1.classList.add('color-green')
     } else {
-        dot1.classList.remove('color-green');
-        dot1.classList.add('color-red');
+        dot1.classList.remove('color-green')
+        dot1.classList.add('color-red')
         // dot2.classList.add('dot-red');
         // dot3.classList.add('dot-red');
     }
@@ -168,23 +139,17 @@ function hasValidPassword(inputValue, passwordInput){
         return passwordValue.isItValid = true 
     } else {
         return passwordValue.isItValid = false 
-    }
-    
+    }  
 }
 
 function hasValidConfirmPassword(inputValue, passwordValue, inputElement){
-    if(inputValue === passwordValue){
+    if(inputValue == passwordValue){
         paintBorderGreen(inputElement)
         return confirmPasswordValue.isItValid = true
     } else {
         paintBorderRed(inputElement)
         return confirmPasswordValue.isItValid = false
-    }
-    
-}
-
-function enableButton() {
-    submitButton.disabled = false
+    }  
 }
 
 function hasValidForm() {
@@ -192,36 +157,11 @@ function hasValidForm() {
         && emailValue.isItValid == true 
         && passwordValue.isItValid == true 
         && confirmPasswordValue.isItValid == true){
-        enableButton()
-    } 
+        return submitButton.disabled = false
+    } else {
+        return submitButton.disabled = true
+    }
 }
-
-// function loadingSpinners() {
-//     setTimeout(() => {
-//         let loadingStatus = document.getElementById('loadingStatus')
-//         let createAccountContent = document.getElementById('createAccountContent')
-//         // let loginDoneBox = document.getElementById('loginDoneBox')
-//         // let loginFormBox = document.getElementById('loginFormBox')
-//         createAccountContent.classList.add('disable')
-//         loadingStatus.classList.remove('disable')
-//         // loginFormBox.classList.add('disable')
-//         // loginDoneBox.classList.remove('disable')
-//     }, 6000);
-// }
-
-// function hasValidForm(nameValue){
-//     if(nameValue == true){
-//         submitButton.disabled == false
-//     }
-// }
-
-// function hasValidForm() {
-//     if(nameValue === true && emailValue === true && passwordValue === true && confirmPasswordValue === true){
-//         submitButton.disabled == false
-//     } 
-// }
-
-// não colocar as funções nos retornos returns
 
 // monitoring 'keyup' and 'focusout' for nameInput 
 nameInput.addEventListener('keyup', () => {
@@ -233,8 +173,6 @@ nameInput.addEventListener('keyup', () => {
     nameValue.currentValue = nameInput.value.trim()
     hasValidName(nameValue.currentValue, nameInput)
     hasValidForm() 
-    // hasValidForm(nameValue) // form validation for name
-    // console.log(nameValue.isItValid)
 })
 
 // monitoring 'keyup' and 'focusout' for emailInput 
@@ -247,7 +185,6 @@ emailInput.addEventListener('keyup', () => {
     emailValue.currentValue = emailInput.value.toLowerCase().trim(); 
     hasValidEmail(emailValue.currentValue, emailInput)
     hasValidForm() 
-    // validate form here
     console.log(emailValue.isItValid)
 })
 
@@ -281,34 +218,23 @@ confirmPasswordInput.addEventListener('keyup', () => {
     hasValidForm() 
 })
 
-
-
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
-    hasValidForm() 
-    let loadingStatus = document.getElementById('loadingStatus')
-    let createAccountContent = document.getElementById('createAccountContent')
-    createAccountContent.classList.add('disable')
-    loadingStatus.classList.remove('disable')
-    // loadingSpinners()
-    setTimeout(() => {
-        // let loadingStatus = document.getElementById('loadingStatus')
-        // let createAccountContent = document.getElementById('createAccountContent')
+    console.log(confirmPasswordValue.currentValue)
+    
+        let loadingStatus = document.getElementById('loadingStatus')
+        let createAccountContent = document.getElementById('createAccountContent')
+        createAccountContent.classList.add('disable')
+        loadingStatus.classList.remove('disable')
+        
+        setTimeout(() => {
         let loginDoneBox = document.getElementById('loginDoneBox')
         let loginFormBox = document.getElementById('loginFormBox')
-        // createAccountContent.classList.add('disable')
-        // loadingStatus.classList.remove('disable')
         loginFormBox.classList.add('disable')
         loginDoneBox.classList.remove('disable')
-    }, 2000);
-    // let loginDoneBox = document.getElementById('loginDoneBox')
-    // let loginFormBox = document.getElementById('loginFormBox')
-    // loginFormBox.classList.add('disable')
-    // loginDoneBox.classList.remove('disable')
-    // console.log('aqui')
+        }, 2000)
+    
 })
-
-
 
 // deixar o botão opaco 
 // limpar o form > criar função
