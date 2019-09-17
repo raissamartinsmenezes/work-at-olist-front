@@ -111,6 +111,9 @@ function testRegexPassword(regexCapital, regexNumber, inputValue, inputElement){
 
 function hasValidName(inputValue, nameInput){
     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
+    // /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/g
+    // /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ]+$/
+    // /[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{2,20}$/g
     if(testRegex(regexName, inputValue, nameInput)){
         return nameValue.isItValid = true
     } else {
@@ -120,6 +123,9 @@ function hasValidName(inputValue, nameInput){
 
 function hasValidEmail(inputValue, emailInput){
     const regexEmail = /^(([^<>()\[\]\\.,;:\s@"][^#&<>\"~;$^%{}?]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    // /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    // /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
     if(testRegex(regexEmail, inputValue, emailInput)){
         return emailValue.isItValid = true
     } else {
@@ -163,12 +169,13 @@ function hasValidForm() {
 // monitoring 'keyup' and 'focusout' for nameInput 
 nameInput.addEventListener('keyup', () => {
     nameValue.currentValue = nameInput.value.trim() // removing whitespaces from both sides of the 'string' value
-    hasValidName(nameValue.currentValue, nameInput) 
-    hasValidForm()
+    // console.log(nameValue.currentValue)
+    hasValidName(nameValue.currentValue, nameInput) // name input validation
+    hasValidForm() // form validation for name
 }); nameInput.addEventListener('focusout', () => { 
     nameValue.currentValue = nameInput.value.trim()
     hasValidName(nameValue.currentValue, nameInput)
-    hasValidForm()  
+    hasValidForm() 
 })
 
 // monitoring 'keyup' and 'focusout' for emailInput 
@@ -211,7 +218,7 @@ confirmPasswordInput.addEventListener('keyup', () => {
     confirmPasswordValue.currentValue = confirmPasswordInput.value
     passwordValue.currentValue = passwordInput.value
     hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue, confirmPasswordInput)
-    hasValidForm()    
+    hasValidForm() 
 })
 
 submitButton.addEventListener('click', (e) => {
@@ -228,15 +235,10 @@ submitButton.addEventListener('click', (e) => {
     let loginFormBox = document.getElementById('loginFormBox')
     loginFormBox.classList.add('disable')
     loginDoneBox.classList.remove('disable')
-    }, 2000) 
+    }, 2000)  
 })
 
-function clearForm(){
-    nameInput.value = '';
-    emailInput.value = '';
-    passwordInput.value = '';
-    confirmPasswordInput.value = '';
-}
+// deixar o botão opaco 
+// limpar o form > criar função
 
-clearForm()
 

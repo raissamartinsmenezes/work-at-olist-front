@@ -12,7 +12,7 @@ The invalid input fields should have a border color like the style guide | ✔�
 The valid input fields should have a border color like the style guide | ✔️
 The Password input must make use of the sequence of validation presented in the Style Guide | ✔️
 If the form is valid, the submit button should be clickable | ✔️
-When the form is submitted, it should present a loading status | 🚫
+When the form is submitted, it should present a loading status | ✔️  ️️️ ️️
 
 ## Build With
 
