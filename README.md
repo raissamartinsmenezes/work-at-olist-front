@@ -1,3 +1,5 @@
+![Olist Logo](https://github.com/raissamartinsmenezes/work-at-olist-front/raw/master/path/to/logo-olist.png)
+
 # Olist Test - Documentation
 
 This project is a resolution of the Olist test, one of the steps of the application process to work as a front end developer. It aims to implement a new **account page**, composed of **name**, **email** and **password** inputs with a **strong measure indicator** to a **password confirmation**. All the features below are required.
@@ -30,14 +32,8 @@ Libs:
 Code Versoning:
 * Git & Github
 
-Server: 
-* 
-
 Task Runner:
-* 
-
-Bundler:
-* 
+* Grunt
 
 Package Manager:
 * npm
@@ -76,7 +72,7 @@ To run tests in your browser, in your terminal enter <<<<<<<<< continue >>>>>>>>
 
 ## Deploy
 
-This project was deployed in the host service **Netlify**, you can check the result by clicking [here]().
+This project was deployed in the host service **Netlify**, you can check the result by clicking [here](https://olist-test-raissa-martins.netlify.com).
 
 ## Author
 
@@ -84,4 +80,10 @@ This project was deployed in the host service **Netlify**, you can check the res
 
 ## Considerations
 
-* 
+This section is to share my considerations about the experience in developing this test.
+
+* I am in the technology area just a few months and in the learning process. Even so, I really liked to have challenged myself to apply what I learned and try to resolutions that I had never used before, trying to solve problems was the most challenging of the whole process, but I am very pleased to have achieved the expected outcome;
+* I started the test with **HTML**, then built **CSS**, finally started **Javascript**. I used **Sass** to build **CSS**, it helped me create a pattern for the elements, it left my code clean and not repetitive. I believe it is a great tool for facilitating the organization of style-related codes;
+* As for building the dynamics and interactions with **Javascript**, I thought it would be more complicated, but it flowed very well, I managed to create all the **features** proposed, at times I had no idea what to do, but with a little research, managed to track a resolution for what it was needed to resolve the problem;
+* Two things were very challenging for me during the process, the first one, building **automated tests**, I had never seen or done one of them, I had to research and attend some classes, at first I couldn't get answers to my doubts, I used the **Jasmine** framework in standalone mode, I understood its operation, I was able to test it, but I could not apply it to my project, as I was unsuccessful I installed it by npm, but I had difficulties to understanding its dynamics;
+* The other challenge was to deploy the project to **netlify**, I had never used a task automator, I researched and saw that **Grunt** could meet my need, so I had to study it to understand how it worked and try to use it. In the project, meanwhile, I was deploying it manually so I could see the project running. 
