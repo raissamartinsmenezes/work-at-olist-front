@@ -4,7 +4,7 @@
   "description": "olist test",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
+    "test": "",
     "sass": "sass src/style/style.scss src/style/style.css"
   },
   "repository": {
@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/raissamartinsmenezes/work-at-olist-front#readme",
   "devDependencies": {
-    "jasmine": "^3.4.0",
     "sass": "^1.22.10"
   }
 }
