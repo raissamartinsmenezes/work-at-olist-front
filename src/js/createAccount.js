@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function(){
+
 const nameInput = document.getElementById('name')
 const emailInput = document.getElementById('email')
 const passwordInput = document.getElementById('password')
@@ -24,13 +26,18 @@ function paintBorderRed(inputElement){
     inputElement.classList.add('border-red')
 }
 
-// function to test regex for name and email
-function testRegex(regex, inputValue, inputElement){
+function paintBorder(inputValue, inputElement){
+    if(inputValue){
+        return paintBorderGreen(inputElement)
+    } else {
+        return paintBorderRed(inputElement)
+    }
+}
+
+function testRegex(regex, inputValue){
     if(regex.test(inputValue)) {
-        paintBorderGreen(inputElement)
         return true
     } else {
-        paintBorderRed(inputElement)
         return false 
     }
 }
@@ -62,8 +69,6 @@ function paintIndicators(testRegexCapital, testRegexNumber, inputValueLength){
     } else {
         dot1.classList.remove('color-green')
         dot1.classList.add('color-red')
-        // dot2.classList.add('dot-red');
-        // dot3.classList.add('dot-red');
     }
 
     if(testRegexCapital == true || testRegexNumber == true || inputValueLength == true){
@@ -98,41 +103,36 @@ function paintIndicators(testRegexCapital, testRegexNumber, inputValueLength){
     
 }
 
-// function to test regex for password and confirmPassword 
-function testRegexPassword(regexCapital, regexNumber, inputValue, inputElement){
+function testRegexPassword(regexCapital, regexNumber, inputValue){
     if(inputValue.length > 5 && regexCapital.test(inputValue) && regexNumber.test(inputValue)) {  
-        paintBorderGreen(inputElement)
         return true 
     } else {
-        paintBorderRed(inputElement)
         return false
     }
 }
 
-function hasValidName(inputValue, nameInput){
+function hasValidName(inputValue){
     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
-    if(testRegex(regexName, inputValue, nameInput)){
+    if(testRegex(regexName, inputValue)){
         return nameValue.isItValid = true
     } else {
         return nameValue.isItValid = false
     }
 }
 
-function hasValidEmail(inputValue, emailInput){
+function hasValidEmail(inputValue){
     const regexEmail = /^(([^<>()\[\]\\.,;:\s@"][^#&<>\"~;$^%{}?]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if(testRegex(regexEmail, inputValue, emailInput)){
+    if(testRegex(regexEmail, inputValue)){
         return emailValue.isItValid = true
     } else {
         return emailValue.isItValid = false
     }
 }
 
-// hasValidPassword
-function hasValidPassword(inputValue, passwordInput){
+function hasValidPassword(inputValue){
     const regexPasswordCapitalLetter = /[A-Z]/g
     const regexPasswordNumber = /[0-9]/g
-    
-    if(testRegexPassword(regexPasswordCapitalLetter, regexPasswordNumber, inputValue, passwordInput)) {
+    if(testRegexPassword(regexPasswordCapitalLetter, regexPasswordNumber, inputValue)) {
         return passwordValue.isItValid = true 
     } else {
         return passwordValue.isItValid = false 
@@ -141,10 +141,8 @@ function hasValidPassword(inputValue, passwordInput){
 
 function hasValidConfirmPassword(inputValue, passwordValue, inputElement){
     if(inputValue == passwordValue){
-        paintBorderGreen(inputElement)
         return confirmPasswordValue.isItValid = true
     } else {
-        paintBorderRed(inputElement)
         return confirmPasswordValue.isItValid = false
     }  
 }
@@ -160,35 +158,36 @@ function hasValidForm() {
     }
 }
 
-// monitoring 'keyup' and 'focusout' for nameInput 
+// monitoring events for DOM elements
+
 nameInput.addEventListener('keyup', () => {
     nameValue.currentValue = nameInput.value.trim() // removing whitespaces from both sides of the 'string' value
-    hasValidName(nameValue.currentValue, nameInput) 
+    hasValidName(nameValue.currentValue)
+    paintBorder(nameValue.isItValid, nameInput) 
     hasValidForm()
 }); nameInput.addEventListener('focusout', () => { 
     nameValue.currentValue = nameInput.value.trim()
-    hasValidName(nameValue.currentValue, nameInput)
+    hasValidName(nameValue.currentValue)
+    paintBorder(nameValue.isItValid, nameInput)
     hasValidForm()  
 })
 
-// monitoring 'keyup' and 'focusout' for emailInput 
 emailInput.addEventListener('keyup', () => {
     emailValue.currentValue = emailInput.value.toLowerCase().trim(); 
-    hasValidEmail(emailValue.currentValue, emailInput)
-    console.log(emailValue.currentValue)
+    hasValidEmail(emailValue.currentValue)
+    paintBorder(emailValue.isItValid, emailInput)
     hasValidForm() 
 }); emailInput.addEventListener('focusout', () => {
     emailValue.currentValue = emailInput.value.toLowerCase().trim(); 
-    hasValidEmail(emailValue.currentValue, emailInput)
+    hasValidEmail(emailValue.currentValue)
+    paintBorder(emailValue.isItValid, emailInput)
     hasValidForm() 
-    console.log(emailValue.isItValid)
 })
 
 passwordInput.addEventListener('keyup', () => {
     passwordValue.currentValue = passwordInput.value
-    console.log(passwordValue.currentValue)
-    hasValidPassword(passwordValue.currentValue, passwordInput)
-    console.log(passwordValue.isItValid)
+    hasValidPassword(passwordValue.currentValue)
+    paintBorder(passwordValue.isItValid, passwordInput)
     const regexPasswordCapitalLetter = /[A-Z]/g
     const regexPasswordNumber = /[0-9]/g
     let testRegexCapital = regexPasswordCapitalLetter.test(passwordValue.currentValue)
@@ -197,26 +196,27 @@ passwordInput.addEventListener('keyup', () => {
     hasValidForm() 
 }); passwordInput.addEventListener('focusout', () => {
     passwordValue.currentValue = passwordInput.value
-    hasValidPassword(passwordValue.currentValue, passwordInput)
+    hasValidPassword(passwordValue.currentValue)
+    paintBorder(passwordValue.isItValid, passwordInput)
     hasValidForm() 
 })
 
 confirmPasswordInput.addEventListener('keyup', () => {
     confirmPasswordValue.currentValue = confirmPasswordInput.value
     passwordValue.currentValue = passwordInput.value
-    hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue, confirmPasswordInput)
+    hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue)
+    paintBorder(confirmPasswordValue.isItValid, confirmPasswordInput)
     hasValidForm() 
-    console.log(confirmPasswordValue.isItValid)
 }); confirmPasswordInput.addEventListener('focusout', () => {
     confirmPasswordValue.currentValue = confirmPasswordInput.value
     passwordValue.currentValue = passwordInput.value
-    hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue, confirmPasswordInput)
+    hasValidConfirmPassword(confirmPasswordValue.currentValue, passwordValue.currentValue)
+    paintBorder(confirmPasswordValue.isItValid, confirmPasswordInput)
     hasValidForm()    
 })
 
 submitButton.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log(confirmPasswordValue.currentValue)
+    e.preventDefault() // preventing default event from button submit
     
     let loadingStatus = document.getElementById('loadingStatus')
     let createAccountContent = document.getElementById('createAccountContent')
@@ -231,7 +231,7 @@ submitButton.addEventListener('click', (e) => {
     }, 2000) 
 })
 
-function clearForm(){
+function clearForm(){ // cleaning the form after refresh 
     nameInput.value = '';
     emailInput.value = '';
     passwordInput.value = '';
@@ -240,3 +240,4 @@ function clearForm(){
 
 clearForm()
 
+})
