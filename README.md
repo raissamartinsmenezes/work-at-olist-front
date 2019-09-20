@@ -1,4 +1,4 @@
-![Olist Logo](https://olist.com/wp-content/uploads/2018/04/Logo-01.png)
+![Olist Logo](/src/style/images/logo-olist.png)
 
 # Olist Test - Documentation
 
