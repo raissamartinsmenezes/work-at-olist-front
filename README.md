@@ -1,4 +1,4 @@
-![Olist Logo](https://github.com/raissamartinsmenezes/work-at-olist-front/raw/master/path/to/logo-olist.png)
+![Olist Logo](https://olist.com/wp-content/uploads/2018/04/Logo-01.png)
 
 # Olist Test - Documentation
 
@@ -27,13 +27,10 @@ Languages:
 
 Libs:  
 * Sass: to compile the CSS language, avoid the repetition and implement the use of a style pattern
-* Jasmine: to create the tests
+* Jest: to create the tests
 
 Code Versoning:
 * Git & Github
-
-Task Runner:
-* Grunt
 
 Package Manager:
 * npm
@@ -48,10 +45,6 @@ Operational System:
 * RAM: 8.00 GB
 * System Type: 64 bits
 
-## Dependencies <<<<<<<<< continue >>>>>>>>>
-
-## Directories Structure <<<<<<<<< continue >>>>>>>>>
-
 # Getting Started
 
 `Project Requirements`
@@ -60,19 +53,19 @@ To run this project you will need [Node.js](https://nodejs.org/en/) installed in
 
 `Installing` 
 
-Download the project or clone it to your PC, in your terminal enter the **`./olist-test`** directory and run **`npm install`** to install all the project dependencies.
-
-`Running Project`
-
-To run the project in the development mode, in your terminal enter the **`./olist-test`** directory and run **`npm run start`** to open http://localhost:3000 and view it in the browser.
+Download the project or clone it to your PC, after in your terminal, enter the **`./olist-test`** directory and run **`npm install`** to install all the project dependencies.
 
 `Testing Project`
 
-To run tests in your browser, in your terminal enter <<<<<<<<< continue >>>>>>>>> 
+To run tests in your terminal enter the **`./olist-test`** directory and run **`npm test`** to run all tests.
 
 ## Deploy
 
 This project was deployed in the host service **Netlify**, you can check the result by clicking [here](https://olist-test-raissa-martins.netlify.com).
+
+## Build
+
+Because of the lack of time due to my delay, I did the build manually, but I intend to do it using Grunt which I have no knowledge about, so I will study about it and I intend to apply it in this project soon. 
 
 ## Author
 

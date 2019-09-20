@@ -113,12 +113,23 @@ function testRegexPassword(regexCapital, regexNumber, inputValue){
 
 function hasValidName(inputValue){
     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
-    if(testRegex(regexName, inputValue)){
-        return nameValue.isItValid = true
-    } else {
-        return nameValue.isItValid = false
-    }
+    nameValue.isItValid = regexName.test(inputValue) 
+    // if(regexName.test(inputValue)){
+        // return nameValue.isItValid = true
+    // } 
+    // else {
+    //     return nameValue.isItValid = false
+    // }
 }
+
+// function hasValidName(inputValue){
+//     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
+//     if(testRegex(regexName, inputValue)){
+//         return nameValue.isItValid = true
+//     } else {
+//         return nameValue.isItValid = false
+//     }
+// }
 
 function hasValidEmail(inputValue){
     const regexEmail = /^(([^<>()\[\]\\.,;:\s@"][^#&<>\"~;$^%{}?]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -241,3 +252,5 @@ function clearForm(){ // cleaning the form after refresh
 clearForm()
 
 })
+
+module.exports = hasValidName
