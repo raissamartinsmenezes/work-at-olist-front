@@ -63,10 +63,6 @@ To run tests in your terminal enter the **`./olist-test`** directory and run **`
 
 This project was deployed in the host service **Netlify**, you can check the result by clicking [here](https://olist-test-front-raissa-martins.netlify.com).
 
-## Build
-
-Because of the lack of time due to my delay, I did the build manually, but I intend to do it using Grunt which I have no knowledge about, so I will study about it and I intend to apply it in this project soon. 
-
 ## Author
 
 [Raissa Martins](https://www.linkedin.com/in/raissamartinsmenezes/) - Front-end Developer | Teacher and Tutor at @reprograma | Designer | web full-stack student at @DigitalHouseBrasil
