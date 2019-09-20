@@ -27,19 +27,7 @@ function paintBorderRed(inputElement){
 }
 
 function paintBorder(inputValue, inputElement){
-    if(inputValue){
-        return paintBorderGreen(inputElement)
-    } else {
-        return paintBorderRed(inputElement)
-    }
-}
-
-function testRegex(regex, inputValue){
-    if(regex.test(inputValue)) {
-        return true
-    } else {
-        return false 
-    }
+    inputValue ? paintBorderGreen(inputElement) : paintBorderRed(inputElement)
 }
 
 function paintIndicators(testRegexCapital, testRegexNumber, inputValueLength){
@@ -99,63 +87,31 @@ function paintIndicators(testRegexCapital, testRegexNumber, inputValueLength){
         indicator1.classList.remove('color-green')
         indicator2.classList.remove('color-green')
         indicator3.classList.remove('color-green')
-    }
-    
-}
-
-function testRegexPassword(regexCapital, regexNumber, inputValue){
-    if(inputValue.length > 5 && regexCapital.test(inputValue) && regexNumber.test(inputValue)) {  
-        return true 
-    } else {
-        return false
-    }
+    }   
 }
 
 function hasValidName(inputValue){
     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
     nameValue.isItValid = regexName.test(inputValue) 
-    // if(regexName.test(inputValue)){
-        // return nameValue.isItValid = true
-    // } 
-    // else {
-    //     return nameValue.isItValid = false
-    // }
 }
 
-// function hasValidName(inputValue){
-//     const regexName = /^[A-Za-zÀ-ú'" ]+ [A-Za-zÀ-ú'" ][^#&<>\"~;$^%{}?]+$/
-//     if(testRegex(regexName, inputValue)){
-//         return nameValue.isItValid = true
-//     } else {
-//         return nameValue.isItValid = false
-//     }
-// }
-
 function hasValidEmail(inputValue){
-    const regexEmail = /^(([^<>()\[\]\\.,;:\s@"][^#&<>\"~;$^%{}?]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if(testRegex(regexEmail, inputValue)){
-        return emailValue.isItValid = true
-    } else {
-        return emailValue.isItValid = false
-    }
+    const regexEmail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
+    emailValue.isItValid = regexEmail.test(inputValue)
 }
 
 function hasValidPassword(inputValue){
     const regexPasswordCapitalLetter = /[A-Z]/g
     const regexPasswordNumber = /[0-9]/g
-    if(testRegexPassword(regexPasswordCapitalLetter, regexPasswordNumber, inputValue)) {
+    if(inputValue.length > 5 && regexPasswordCapitalLetter.test(inputValue) && regexPasswordNumber.test(inputValue)) {
         return passwordValue.isItValid = true 
     } else {
         return passwordValue.isItValid = false 
     }  
 }
 
-function hasValidConfirmPassword(inputValue, passwordValue, inputElement){
-    if(inputValue == passwordValue){
-        return confirmPasswordValue.isItValid = true
-    } else {
-        return confirmPasswordValue.isItValid = false
-    }  
+function hasValidConfirmPassword(inputValue, passwordValue){
+    (inputValue === passwordValue) ? confirmPasswordValue.isItValid = true : confirmPasswordValue.isItValid = false
 }
 
 function hasValidForm() {
@@ -253,4 +209,3 @@ clearForm()
 
 })
 
-module.exports = hasValidName
