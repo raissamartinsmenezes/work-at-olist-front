@@ -53,11 +53,11 @@ To run this project you will need [Node.js](https://nodejs.org/en/) installed in
 
 `Installing` 
 
-Download the project or clone it to your PC, after in your terminal, enter the **`./olist-test`** directory and run **`npm install`** to install all the project dependencies.
+Download the project or clone it to your PC, after in your terminal, enter the **`./work-at-olist-front`** directory and run **`npm install`** to install all the project dependencies.
 
 `Testing Project`
 
-To run tests in your terminal enter the **`./olist-test`** directory and run **`npm test`** to run all tests.
+To run tests in your terminal enter the **`./work-at-olist-front`** directory and run **`npm test`** to run all tests.
 
 ## Deploy
 
